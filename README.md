@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lantanacamara/googleSheetsR.svg?branch=master)](https://travis-ci.org/lantanacamara/googleSheetsR)
+
 # googleSheetsR
 
 Google Sheets API R library
