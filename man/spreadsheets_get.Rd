@@ -4,12 +4,15 @@
 \alias{spreadsheets_get}
 \title{Gets values in a range of a spreadsheet.The caller must specify the spreadsheet ID, range.}
 \usage{
-spreadsheets_get(data_type = "data.frame", spreadsheetId, range)
+spreadsheets_get(data_type = "data.frame", spreadsheetId, tabName = "",
+  range = "A1")
 }
 \arguments{
 \item{data_type}{The expected data type of the output}
 
 \item{spreadsheetId}{The ID of the spreadsheet to get}
+
+\item{tabName}{The name of the spreadsheet tab}
 
 \item{range}{The A1 notation of the values to get}
 }
