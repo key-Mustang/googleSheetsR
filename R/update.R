@@ -1,4 +1,15 @@
+#' Sets values in a range of a spreadsheet.The caller must specify the spreadsheet ID, range.
+#'
+#' @seealso \href{https://developers.google.com/sheets/}{Google Documentation}
+#'
+#' @param x The value to set in the spreadsheet
+#' @param spreadsheetId The ID of the spreadsheet to update
+#' @param range The A1 notation of the values to update
 #' @export
 spreadsheets_update <- function(x, spreadsheetId, range){
-  spreadsheets.values.update(ValueRange(values = rbind(colnames(x), as.matrix(x))), spreadsheetId, range, valueInputOption = "USER_ENTERED")
+
+  # Add colnames if it is data frame
+  update_value <- ifelse(is.data.frame(x), rbind(colnames(x), as.matrix(x)), x)
+
+  spreadsheets.values.update(ValueRange(values = update_value), spreadsheetId, range, valueInputOption = "USER_ENTERED")
 }
