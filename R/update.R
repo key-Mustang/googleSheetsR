@@ -6,13 +6,17 @@
 #' @param spreadsheetId The ID of the spreadsheet to update
 #' @param range The A1 notation of the values to update
 #' @export
-spreadsheets_update <- function(x, spreadsheetId, range){
+spreadsheets_update <- function(x, spreadsheetId, spreadsheetTabName = NULL, range = "A1"){
 
   update_value <- x
 
   # Add colnames if it is data frame
   if(is.data.frame(x)){
     update_value <- rbind(colnames(x), as.matrix(x))
+  }
+
+  if(!is.null(spreadsheetTabName)){
+    range <- paste0(spreadsheetTabName, "!",range)
   }
 
   spreadsheets.values.update(ValueRange(values = update_value), spreadsheetId, range, valueInputOption = "USER_ENTERED")
