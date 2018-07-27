@@ -105,7 +105,7 @@ File <- function(File.appProperties = NULL, File.capabilities = NULL, File.conte
         folderColorRgb = folderColorRgb, fullFileExtension = fullFileExtension, hasAugmentedPermissions = hasAugmentedPermissions,
         hasThumbnail = hasThumbnail, headRevisionId = headRevisionId, iconLink = iconLink,
         id = id, imageMediaMetadata = imageMediaMetadata, isAppAuthorized = isAppAuthorized,
-        kind = `drive#file`, lastModifyingUser = lastModifyingUser, md5Checksum = md5Checksum,
+        kind = "drive#file", lastModifyingUser = lastModifyingUser, md5Checksum = md5Checksum,
         mimeType = mimeType, modifiedByMe = modifiedByMe, modifiedByMeTime = modifiedByMeTime,
         modifiedTime = modifiedTime, name = name, originalFilename = originalFilename,
         ownedByMe = ownedByMe, owners = owners, parents = parents, permissionIds = permissionIds,
