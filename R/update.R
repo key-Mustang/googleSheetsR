@@ -8,8 +8,12 @@
 #' @export
 spreadsheets_update <- function(x, spreadsheetId, range){
 
+  update_value <- x
+
   # Add colnames if it is data frame
-  update_value <- ifelse(is.data.frame(x), rbind(colnames(x), as.matrix(x)), x)
+  if(is.data.frame(x)){
+    update_value <- rbind(colnames(x), as.matrix(x))
+  }
 
   spreadsheets.values.update(ValueRange(values = update_value), spreadsheetId, range, valueInputOption = "USER_ENTERED")
 }
